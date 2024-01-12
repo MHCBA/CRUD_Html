@@ -1,5 +1,5 @@
 Sistema de Gerenciamento de Usuários
-Este é um projeto simples de um Sistema de Gerenciamento de Usuários, desenvolvido utilizando [tecnologias utilizadas, por exemplo, HTML, CSS, JavaScript, Postgres].
+Este é um projeto simples de um Sistema de Gerenciamento de Usuários, desenvolvido utilizando [HTML, CSS, Python, Postgres].
 
 Funcionalidades
 Create (Criar): Adiciona novos usuários ao sistema, registrando suas informações.
