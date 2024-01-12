@@ -1,0 +1,44 @@
+{% extends 'links.html' %}
+{% block content %}
+    <h1>Alterar/Deletar</h1>
+    <div id="opcao">  <!-- define para oculto o forms de input de id-->
+        <!-- formulario que irá enviar via rota o id digitado-->  
+        <form method="post" action="/alterar">
+                Digite o id do usuario: <input type="text" required name="selecione">
+                <button type="submit">pesquisar</button>
+            {% if selecione_request!= None and user_selected == None %}
+                <div>Não existe usuário com este ID</div>
+            {% elif user_selected %}
+                <p></p>
+                <div>{{user_selected.nome}} é o usuario que deseja?</div>
+                <button type="submit" onclick="mostrarOpcao('alterar', event)">Confirmar</button>
+            {% endif %}
+        </form>
+    </div> <!-- define para oculto o forms de input de id após a ação de pressionar o botao-->
+
+
+    <form id="principalForm" method="post" action="/alterar" style="display:none;">
+            <div>{{ user_selected.nome }}</div>
+        <p>deseja alterar ou deletar o usuario {{ user_selected.nome }}? </p>
+        <a href="/alterar_2/{{ selecione_request }}">Alterar</a> |
+        <a href="/delete/{{ selecione_request }}">Deletar</a>
+        
+    </form>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+    <script>
+        function mostrarOpcao(acao, event) {
+            event.preventDefault();
+            document.getElementById("principalForm").style.display = "block"; // pega o elemento principalform do botão e o oculta
+            document.getElementById("opcao").style.display = "none"; // pega o elemento "opção"(responsavel pelo input de id do usuario que deseja remover/alterar do banco) no html por id e altera via css o style.display para mostrar 
+            document.getElementById("botao").style.display = "block"            
+            // Defina a ação no formulário de opção
+            document.getElementById("opcaoForm").action = '/' + acao;
+        }
+    </script>
+    
+
+{% endblock %}

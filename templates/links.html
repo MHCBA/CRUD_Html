@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" href="{{url_for('static', filename='style2024.css' )}}">
+</head>
+<body>
+    
+
+<nav>
+
+        <a href="{{ url_for('formulario') }}">cadastre-se</a>|
+        <a href="{{url_for('home')}}"> pagina inicial</a>|
+        <a href="{{url_for('sobremim')}}"> sobre mim</a>|
+        <a href="{{url_for('lista_usuarios')}}" > lista_usuarios</a>|
+        <a href="{{url_for('alterar')}}" > alterar/deletar</a>
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>

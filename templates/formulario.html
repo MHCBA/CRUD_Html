@@ -1,0 +1,15 @@
+{% extends 'links.html' %}
+{% block content %}
+    <h1>Crie um usuario</h1>
+    <form method="post" action="/formulario">
+        <p>Digite o nome: <input type="text" required name="nome"></p>
+        <p>Digite a idade: <input type="text" required name="idade"></p>
+        <p>Digite o email: <input type="email" required name="email"></p>
+        <p>Digite a senha: <input type="password" required name="senha"></p>
+        <button type="submit">enviar</button>
+        {% if mensagem != '' %}
+            <div>{{mensagem}}</div>
+        {% endif %}
+    </form>
+
+{% endblock %}

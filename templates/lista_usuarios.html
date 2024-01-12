@@ -1,0 +1,17 @@
+{% extends 'links.html'%}
+{% block content %}
+<h1>
+    Lista usuarios
+</h1>
+<ul>
+    {% for dado in dados %}
+        <li>id: {{ dado.id }}</li>
+        <li>nome: {{ dado.nome }}</li>
+        <li>idade: {{ dado.idade }}</li>
+        <li>email: {{ dado.email }}</li>
+        <p></p>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

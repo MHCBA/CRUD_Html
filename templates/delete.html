@@ -1,0 +1,20 @@
+{% extends 'links.html' %}
+{% block content %}
+    <h1>Deletar</h1>
+    {{user_selected}}
+    <h2>deseja deletar o usuario {{user_selected.nome}}?</h2>
+    <div id="opcao2">
+        <form method="post" action="/delete/{{id}}" id="opcaoForm">
+            <label for="coluna">Escolha a coluna:</label>
+            <select name="coluna" id="coluna">
+                <option value="tudo">Usuario(tudo)</option>
+            <br>
+            </select>
+            <button type="submit">delete</button>
+
+        </form>
+        {% if user_selected == none %}
+            {{mensagem}}
+            {% endif %}
+    </div>
+{% endblock %}

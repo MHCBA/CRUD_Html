@@ -1,0 +1,24 @@
+{% extends 'links.html' %}
+{% block content %}
+    <h1>Alterar</h1>
+    {{user_selected}}
+    <h2>O que deseja alterar do usuario {{user_selected.nome}}?</h2>
+    <div id="opcao2">
+        <form method="post" action="/alterar_2/{{id}}" id="opcaoForm">
+            <label for="coluna">Escolha a coluna:</label>
+            <select name="coluna" id="coluna">
+                <option value="nome">Nome</option>
+                <option value="idade">Idade</option>
+                <option value="email">Email</option>
+                <option value="senha">Senha</option>
+            </select>
+            <br>
+            <input type="text" name="atualizado" id="atualizadoInput">
+            <button type="submit">Alterar</button>
+            {% if novo_valor != None %}
+                <div>{{mensagem}}</div>
+            {% endif %}
+
+        </form>
+    </div>
+{% endblock %}
