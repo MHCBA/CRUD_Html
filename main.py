@@ -11,7 +11,7 @@ from function_py.delete import excluir_valores
 from function_py.validador_formulario import validar_valor_forms
 
 
-engine = create_engine("postgresql://postgres:cTI*x64]@localHost:5432/Michell_teste", echo=True) #cria conexão com banco de dados
+engine = create_engine("postgresql://usuario:senha@localHost:numero_porta/bancodedados", echo=True) #cria conexão com banco de dados
 Session = sessionmaker(bind=engine)
 session = Session()
 app = Flask(__name__) #instaciando a variavel app
